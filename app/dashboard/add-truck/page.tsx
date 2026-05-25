@@ -301,6 +301,26 @@ export default function AddTruckPage() {
         </button>
       </div>
 
+      {/* ── Alerta de Error General ── */}
+      {error && (
+        <div style={{
+          padding: "16px 20px",
+          borderRadius: 12,
+          background: "rgba(220, 38, 38, 0.08)",
+          border: "1px solid rgba(220, 38, 38, 0.3)",
+          color: "#dc2626",
+          fontSize: 14,
+          fontWeight: 700,
+          marginBottom: 20,
+          display: "flex",
+          alignItems: "center",
+          gap: 10
+        }}>
+          <span className="material-symbols-outlined">error</span>
+          <span>{error}</span>
+        </div>
+      )}
+
       {/* ── Barra de Búsqueda y Filtros ── */}
       <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-2xl bg-white/50 backdrop-blur-xl border border-white/30 shadow-sm mb-6">
         <div style={{ display: "flex", alignItems: "center", gap: 10, flex: 1, minWidth: 260 }}>
