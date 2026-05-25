@@ -32,7 +32,7 @@ const securityHeaders = [
       "default-src 'self'",
       // Supabase Realtime y API calls
       `connect-src 'self' https://*.supabase.co wss://*.supabase.co ${process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000"}`,
-      process.env.NODE_ENV === "development" ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'" : "script-src 'self'",
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com", // Tailwind requiere inline styles, y necesitamos Google Fonts
       "img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co",
       "font-src 'self' https://fonts.gstatic.com",
