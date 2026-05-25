@@ -79,7 +79,7 @@ export function BottomNav() {
             </Link>
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-max">
               <span className={`text-[10px] font-bold ${pathname === "/dashboard/route" ? "text-red-500" : "text-on-surface-variant"}`}>
-                Severidad
+                Rutas
               </span>
             </div>
           </div>
