@@ -466,7 +466,7 @@ export default function DashboardPage() {
           ⏳ Cargando datos de flota...
         </div>
       )}
-      {error && (
+      {error && error.message !== "API_NOT_CONFIGURED" && (
         <div style={{ fontSize: 13, color: "#dc2626", background: "rgba(220,38,38,0.1)", border: "1px solid rgba(220,38,38,0.25)", borderRadius: 10, padding: 12 }}>
           ⚠️ Error: {error.message}
         </div>

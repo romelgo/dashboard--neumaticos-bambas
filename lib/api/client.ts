@@ -13,6 +13,9 @@ const API_BASE_URL = getApiBaseUrl();
 
 export class ApiClient {
   static async fetch<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
+    if (!API_BASE_URL) {
+      throw new Error("API_NOT_CONFIGURED");
+    }
     const url = `${API_BASE_URL}${endpoint}`;
     
     // Aquí podemos inyectar un JWT desde las cookies/estado global si es necesario
