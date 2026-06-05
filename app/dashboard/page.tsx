@@ -446,7 +446,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ── Cabecera ── */}
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 28 }}>
+      <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 mb-7">
         <div>
           <h1 style={{ fontSize: 32, fontWeight: 900, color: "#0f172a", margin: 0, letterSpacing: "-0.03em" }}>
             Monitor Global
@@ -455,7 +455,7 @@ export default function DashboardPage() {
             Flota CAT 797F — Minera Las Bambas
           </p>
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 8, background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", borderRadius: 99, padding: "8px 16px" }}>
+        <div className="flex items-center gap-2 bg-emerald-500/10 border border-emerald-500/30 rounded-full px-4 py-2 self-start md:self-auto">
           <span style={{ width: 8, height: 8, borderRadius: "50%", background: "#16a34a", boxShadow: "0 0 8px #16a34a", display: "inline-block" }} />
           <span style={{ fontSize: 12, fontWeight: 800, color: "#16a34a", letterSpacing: "0.04em" }}>Supabase Realtime</span>
         </div>
@@ -477,7 +477,7 @@ export default function DashboardPage() {
         <h2 style={{ fontSize: 11, fontWeight: 800, color: "#475569", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 14 }}>
           📊 Impacto Geomecánico — Objetivo 1: Tasa de Desgaste (mm/h) y CPH por Zona
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
           <KPICard
             icon="construction" label="Desgaste Real — Tajo Norte"
             value={`${desgasteCocadaNorte.toFixed(5)} mm/h`}
@@ -512,7 +512,7 @@ export default function DashboardPage() {
         <h2 style={{ fontSize: 11, fontWeight: 800, color: "#475569", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 14 }}>
           🔩 Profundidad de Cocada — Datos Reales de Flota
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
 
           {/* Panel Gauge Norte */}
           <div style={{ ...glassStyle, borderRadius: 18, padding: "22px 24px", display: "flex", flexDirection: "column", gap: 16 }}>
@@ -532,7 +532,7 @@ export default function DashboardPage() {
                 color="#16a34a"
               />
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
+            <div className="grid grid-cols-3 gap-2">
               {[
                 { label: "Inicial", val: `${COCADA_INICIAL_MM} mm`, color: "#64748b" },
                 { label: "Actual Prom.", val: `${profNorteDisplay.toFixed(1)} mm`, color: "#16a34a" },
@@ -583,7 +583,7 @@ export default function DashboardPage() {
                 color="#dc2626"
               />
             </div>
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 8 }}>
+            <div className="grid grid-cols-3 gap-2">
               {[
                 { label: "Inicial", val: `${COCADA_INICIAL_MM} mm`, color: "#64748b" },
                 { label: "Actual Prom.", val: `${profSurDisplay.toFixed(1)} mm`, color: "#dc2626" },
@@ -764,7 +764,7 @@ export default function DashboardPage() {
         <h2 style={{ fontSize: 11, fontWeight: 800, color: "#475569", textTransform: "uppercase", letterSpacing: "0.12em", marginBottom: 14 }}>
           🚛 Capacidad Operativa — Objetivo 2: Validar Flota 60 Equipos al 83% Disponibilidad
         </h2>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 14 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3.5">
           <KPICard icon="local_shipping" label="Flota Total" value={`${FLOTA_TOTAL}`} sub={`${totalCamionesDB} registrados en sistema`} color="#2563eb" />
           <KPICard icon="precision_manufacturing" label="Cap. Operativa" value={`${CAPACIDAD_TON} t`} sub={`${FLOTA_TOTAL} camiones × ${CAPACIDAD_TON} ton`} color="#16a34a" />
           <KPICard icon="calendar_today" label="Ton/Período" value={`${formatNumber(capacidadTotal / 1_000_000, { decimals: 1 })}M t`} sub={`${HORAS_DIA}h/día × ${DIAS_MES} días × 6 meses`} color="#d97706" />
@@ -772,7 +772,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ══ PANELES COMPARATIVOS ══ */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 18 }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4.5">
         <div style={{ ...glassStyle, borderRadius: 18, padding: "22px 24px" }}>
           <h3 style={{ fontSize: 14, fontWeight: 800, color: "#0f172a", marginBottom: 18, display: "flex", alignItems: "center", gap: 6 }}>
             <span className="material-symbols-outlined" style={{ color: "#2563eb" }}>trending_up</span>
@@ -811,7 +811,7 @@ export default function DashboardPage() {
       </div>
 
       {/* ══ ALERTAS Y RECOMENDACIONES ══ */}
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 16 }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {/* Alertas Térmicas */}
         <div style={{ background: "rgba(220,38,38,0.04)", border: "1px solid rgba(220,38,38,0.18)", borderRadius: 16, padding: "18px 20px" }}>
           <h3 style={{ fontSize: 12, fontWeight: 800, color: "#dc2626", marginBottom: 12, display: "flex", alignItems: "center", gap: 4 }}>
@@ -876,7 +876,7 @@ export default function DashboardPage() {
           <span className="material-symbols-outlined" style={{ color: "#2563eb" }}>science</span>
           Variables de Simulación — Escenario Mixto (Objetivo 3)
         </h3>
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 14 }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5">
           {[
             { label: "Cocada Inicial", value: `${COCADA_INICIAL_MM} mm`, color: "#2563eb", icon: "circle" },
             { label: "Vida Útil Flota Ref.", value: `${formatNumber(VIDA_UTIL_FLOTA_H)} h`, color: "#16a34a", icon: "schedule" },
@@ -890,7 +890,7 @@ export default function DashboardPage() {
             </div>
           ))}
         </div>
-        <div style={{ marginTop: 16, display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12 }}>
+        <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
             { label: "Fórmula Desgaste Cocada", value: `65 mm ÷ vida_util_h`, desc: "Tasa = 65/6201 Norte | 65/4801 Sur", color: "#2563eb" },
             { label: "Fórmula CPH", value: `$52,000 ÷ vida_util × 6 neum.`, desc: "CPH Norte: $50.3/h | CPH Sur: $65.0/h", color: "#dc2626" },
