@@ -37,7 +37,7 @@ const securityHeaders = [
       "img-src 'self' data: blob: https://lh3.googleusercontent.com https://*.supabase.co",
       "font-src 'self' https://fonts.gstatic.com",
       "frame-src 'self' https://www.google.com https://maps.google.com",
-      "frame-ancestors 'none'",
+      "frame-ancestors 'self'",
       "object-src 'none'",
       "base-uri 'self'",
     ].join("; "),
